@@ -118,7 +118,7 @@ export interface WorkplaceAccommodation {
   }
   holidays: WorkplaceHoliday[]
   hrChecklist: string[]
-  germanLegalNote: string
+  legalNote: string
 }
 
 export type IncidentCategory =

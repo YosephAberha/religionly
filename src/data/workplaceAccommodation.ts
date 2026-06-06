@@ -73,7 +73,7 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       'Train managers not to comment on fasting employees skipping lunch',
       'Review uniform policy to ensure hijab and religious dress are permitted',
     ],
-    germanLegalNote: 'Under the German General Equal Treatment Act (AGG, §1), employers are prohibited from discriminating based on religion or belief. Refusing to accommodate prayer breaks or religious dress without a legitimate operational justification may constitute indirect discrimination. The Federal Labour Court (BAG) has consistently held that reasonable accommodation of religious practice is required where it does not unreasonably burden the employer.',
+    legalNote: 'In most jurisdictions — including EU member states, the UK (Equality Act 2010), the USA (Title VII, Civil Rights Act), Canada (Human Rights Act), and Australia (Fair Work Act) — employers are prohibited from discriminating based on religion or belief. Refusing to accommodate prayer breaks or religious dress without a legitimate operational justification may constitute indirect discrimination. The general principle across these frameworks is that reasonable accommodation is required where it does not place undue hardship on the employer. Consult your local employment counsel for jurisdiction-specific obligations.',
   },
 
   {
@@ -157,7 +157,7 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       'Never schedule job interviews or critical assessments on Yom Kippur',
       'Include Passover dietary needs in catering instructions during March/April',
     ],
-    germanLegalNote: 'Under German AGG §1, discrimination based on religion is prohibited. Shabbat and Yom Kippur are recognised religious observances that require employer consideration. In practice, German courts have held that an employer must seek reasonable alternatives before refusing to accommodate religious observance. The Central Council of Jews in Germany (Zentralrat der Juden in Deutschland) provides employer guidance on request.',
+    legalNote: 'Across most jurisdictions (EU, UK, USA, Canada, Australia), discrimination based on religion is prohibited and employers must seek reasonable alternatives before refusing to accommodate religious observance. Shabbat and Yom Kippur are widely recognised in employment case law as non-negotiable religious observances. Where national or state law designates specific religious public holidays, those must be respected. For company-specific guidance, consult local employment counsel and the relevant Jewish community council in your country.',
   },
 
   {
@@ -236,7 +236,7 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       'Seventh-day Adventists observe Sabbath from Friday sunset to Saturday sunset — treat similarly to Jewish Shabbat',
       'Some Eastern Orthodox employees observe Christmas on 7 January — acknowledge this',
     ],
-    germanLegalNote: 'Most major Christian holidays are already German public holidays (Feiertage) under Länder law. For minority Christian denominations with additional observances (Orthodox Christmas, Adventist Sabbath), the AGG requires employers to consider reasonable accommodation. The Feiertagsgesetz of each German state defines additional protected days.',
+    legalNote: 'The majority of Christian public holidays (Christmas, Easter) are already national public holidays in most Western countries and many others globally. For minority Christian denominations with additional observances (Orthodox Christmas on 7 January, Adventist Sabbath, Jehovah\'s Witness conventions), equal treatment legislation in most jurisdictions requires employers to consider reasonable accommodation. The same protections that apply to other faiths apply equally to all Christian denominations. Consult your country\'s employment equality law for specifics.',
   },
 
   {
@@ -309,7 +309,7 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       'Train managers: vegetarianism in the team may be religiously motivated — do not pressure',
       'Be aware of regional variations: South Indian and North Indian practice can differ significantly',
     ],
-    germanLegalNote: 'Hindu employees are protected under AGG §1 on grounds of religion. The wearing of bindi, tilaka, or religious jewellery constitutes religious expression. Dietary requirements (particularly the avoidance of beef) must be accommodated in workplace catering policies. German courts have consistently upheld that reasonable dietary accommodation at company events is an employer responsibility where feasible.',
+    legalNote: 'Hindu employees are protected under religious equality legislation in all major jurisdictions (EU, UK, USA, Canada, Australia). The wearing of bindi, tilaka, or religious jewellery constitutes protected religious expression and cannot be prohibited without legitimate occupational justification. Employers are generally expected to make reasonable dietary accommodation at workplace events. Consult local employment counsel for jurisdiction-specific obligations.',
   },
 
   {
@@ -370,7 +370,7 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       'Acknowledge Vesak in company calendar if you have Buddhist employees',
       'Train managers: not all Buddhists are vegetarian — diversity of practice is wide',
     ],
-    germanLegalNote: 'Buddhist employees are protected under AGG §1 on grounds of religion. Germany\'s constitution (GG Art. 4) guarantees freedom of religion. In practice, Buddhist practice creates fewer conflicts with standard employment than some other traditions. The key obligations are dietary accommodation at company events and permission to wear religious items.',
+    legalNote: 'Buddhist employees are protected under religious equality legislation across most jurisdictions globally. In practice, Buddhist practice creates fewer conflicts with standard employment policies than some other traditions, as there are no mandatory prayer times or strict dress requirements for lay practitioners. The primary employer obligations are dietary accommodation at company events and permission to wear religious items such as mala beads. Consult local employment counsel for jurisdiction-specific obligations.',
   },
 
   {
@@ -443,7 +443,7 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       'Train reception and security: a Sikh employee wearing a turban must not be asked to remove it at entry',
       'Safety equipment (hard hats): proactively engage with the employee to identify compliant solutions',
     ],
-    germanLegalNote: 'Sikh employees enjoy full protection under AGG §1. The Five Ks are articles of faith, not optional dress. The turban is specifically protected under EU and German equality law. For safety-critical environments (hard hat requirements), German courts have generally required employers to explore alternative solutions before mandating turban removal. The Kirpan falls under the German Weapons Act (WaffG §42a) — while usually exempt for religious use, employers in security-sensitive environments should seek legal advice.',
+    legalNote: 'Sikh employees enjoy full protection under religious equality legislation in all major jurisdictions. The Five Ks are articles of faith, not optional dress, and this distinction is recognised in case law across the EU, UK, USA, Canada, and Australia. The turban is specifically protected and exemptions from hard hat requirements for Sikhs are established in law in the UK (Employment Act 1989 §11) and recognised by case precedent elsewhere. The Kirpan (ceremonial blade) varies in treatment by jurisdiction — most countries distinguish religious use from weapons law, but employers in security-sensitive environments should seek local legal advice.',
   },
 ]
 

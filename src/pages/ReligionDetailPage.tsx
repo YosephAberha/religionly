@@ -462,7 +462,7 @@ function WorkplaceTab({ accommodation, accent }: { accommodation: WorkplaceAccom
     { id: 'dress', label: 'Religious Dress', icon: <Shirt size={18} className="text-purple-400" /> },
     { id: 'holidays', label: 'Holidays & Leave', icon: <CalendarDays size={18} className="text-amber-400" /> },
     { id: 'checklist', label: "HR Manager's Checklist", icon: <ClipboardList size={18} className="text-pink-400" /> },
-    { id: 'legal', label: 'German Legal Context', icon: <Scale size={18} className="text-sky-400" /> },
+    { id: 'legal', label: 'Legal & Compliance', icon: <Scale size={18} className="text-sky-400" /> },
   ]
 
   return (
@@ -473,7 +473,7 @@ function WorkplaceTab({ accommodation, accent }: { accommodation: WorkplaceAccom
           <h3 className="font-bold text-white">Workplace Accommodation Guide</h3>
         </div>
         <p className="text-sm text-white/50 leading-relaxed">
-          A practical HR reference for managers working with employees of this faith. Covers day-to-day accommodation, leave planning, dietary requirements, and German legal obligations.
+          A practical HR reference for managers working with employees of this faith. Covers day-to-day accommodation, leave planning, dietary requirements, and employer legal obligations.
         </p>
       </GlassCard>
 
@@ -644,9 +644,9 @@ function WorkplaceTab({ accommodation, accent }: { accommodation: WorkplaceAccom
                       <div className="p-4 rounded-xl bg-sky-500/10 border border-sky-500/20">
                         <div className="flex items-center gap-2 mb-3">
                           <Scale size={16} className="text-sky-400" />
-                          <span className="text-sm font-semibold text-sky-300">German Legal Framework (AGG)</span>
+                          <span className="text-sm font-semibold text-sky-300">Legal & Compliance Context</span>
                         </div>
-                        <p className="text-sm text-white/70 leading-relaxed">{accommodation.germanLegalNote}</p>
+                        <p className="text-sm text-white/70 leading-relaxed">{accommodation.legalNote}</p>
                       </div>
                     )}
 

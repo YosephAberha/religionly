@@ -19,7 +19,7 @@ export default function WorkplaceGuidePage() {
         a.dietaryRestrictions.summary.toLowerCase().includes(q) ||
         a.prayerRequirements.notes.toLowerCase().includes(q) ||
         a.holidays.some((h) => h.name.toLowerCase().includes(q)) ||
-        a.germanLegalNote.toLowerCase().includes(q)
+        a.legalNote.toLowerCase().includes(q)
       )
     }
     return true
@@ -34,7 +34,7 @@ export default function WorkplaceGuidePage() {
           <h1 className="text-3xl font-bold">Workplace Accommodation Guide</h1>
         </div>
         <p className="text-white/50 max-w-2xl">
-          A practical HR reference for accommodating religious diversity in the workplace. Covers prayer, diet, religious dress, holidays, and German legal obligations — per religion.
+          A practical HR reference for accommodating religious diversity in the workplace. Covers prayer, diet, religious dress, holidays, and employer legal obligations — per religion.
         </p>
       </div>
 
@@ -252,9 +252,9 @@ function AccommodationCard({
               <div className="p-4 rounded-xl bg-sky-500/10 border border-sky-500/20">
                 <div className="flex items-center gap-2 mb-3">
                   <Scale size={16} className="text-sky-400" />
-                  <span className="text-sm font-semibold text-sky-300">German Legal Framework</span>
+                  <span className="text-sm font-semibold text-sky-300">Legal & Compliance Context</span>
                 </div>
-                <p className="text-sm text-white/70 leading-relaxed">{accommodation.germanLegalNote}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{accommodation.legalNote}</p>
               </div>
             )}
           </div>
