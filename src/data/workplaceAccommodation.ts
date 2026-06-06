@@ -172,13 +172,21 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       notes: 'Most Christian denominations have no mandatory daily prayer schedule that conflicts with work. Sunday is the traditional day of worship — scheduling Sunday work may affect devout employees. Good Friday and Easter Sunday carry strong religious significance. Jehovah\'s Witnesses and Seventh-day Adventists have stricter observance requirements.',
     },
     dietaryRestrictions: {
-      summary: 'Most Christians have no dietary restrictions. Exceptions: Catholics abstain from meat on Fridays during Lent (40 days before Easter). Some Adventists are vegetarian.',
-      prohibited: ['Meat on Fridays during Lent (Roman Catholic)'],
-      required: ['No universal requirements'],
+      summary: 'Dietary practice varies significantly by denomination. Roman Catholics abstain from meat on Fridays during Lent. Eastern Orthodox, Coptic, and Ethiopian Orthodox Christians observe stricter fasting — abstaining from all meat and dairy products every Wednesday and Friday throughout the year, plus extended fasting periods. Seventh-day Adventists are typically vegetarian.',
+      prohibited: [
+        'Meat on Fridays during Lent (Roman Catholic)',
+        'Meat AND dairy on every Wednesday and Friday year-round (Eastern Orthodox, Coptic Orthodox, Ethiopian Orthodox)',
+        'All animal products during extended Orthodox fasting periods: Great Lent (~48 days), Apostles\' Fast, Nativity Fast (40 days before Christmas), Dormition Fast (August)',
+        'Meat, caffeine, and alcohol year-round (Seventh-day Adventist)',
+      ],
+      required: ['No universal requirements across all denominations'],
       eventTips: [
-        'Always offer vegetarian options at company events — covers Catholics during Lent and Adventists year-round',
-        'Avoid scheduling purely meat-based team lunches on Fridays during Lent (March/April)',
-        'Seventh-day Adventists may avoid caffeine and alcohol — provide non-alcoholic options at events',
+        'Always offer vegetarian and vegan options at company events — covers Orthodox Christians on fasting days and Adventists year-round',
+        'For Orthodox Christian colleagues, Wednesday and Friday catering at company events should include a fully plant-based option — this applies every week, not only during Lent',
+        'Avoid scheduling meat-only team lunches on Fridays — this affects both Catholic (during Lent) and Orthodox colleagues (year-round)',
+        'During Great Lent (before Orthodox Easter, which may differ from Catholic Easter by up to 5 weeks), Orthodox employees may be on a full plant-based diet for the entire period',
+        'Seventh-day Adventists may avoid caffeine and alcohol — ensure non-alcoholic, non-caffeinated options are clearly available at all events',
+        'Ethiopian Orthodox fasting is particularly strict — if you have Ethiopian Orthodox colleagues, check directly what they can eat at a given event',
       ],
     },
     dresscode: {
