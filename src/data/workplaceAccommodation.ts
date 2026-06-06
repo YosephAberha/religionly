@@ -235,7 +235,6 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
       },
     ],
     hrChecklist: [
-      'Christmas parties should be inclusive — offer opt-out for non-Christian or non-celebrating employees',
       'Never require cross or religious jewellery removal',
       'Offer vegetarian options at all company events (covers Lent, Adventists)',
       'Be aware that Sunday work obligations may conflict with devout employees\' church attendance',
