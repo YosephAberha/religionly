@@ -1,0 +1,551 @@
+import { CriticalIncident } from '../types'
+
+export const criticalIncidents: CriticalIncident[] = [
+  {
+    id: 'ci-001',
+    title: 'The Missed Friday Meeting',
+    category: 'prayer',
+    cultures: ['Germany', 'Middle East', 'Pakistan'],
+    religions: ['islam'],
+    situation: 'A German team leader schedules a mandatory all-hands meeting every Friday at 12:30pm. A Muslim colleague, Tariq, consistently arrives 20–30 minutes late without explanation. The team leader is frustrated and considers noting it in Tariq\'s performance review.',
+    whatHappened: 'The team leader raised the issue in a 1-on-1, implying a lack of commitment. Tariq felt embarrassed and misunderstood. He had been attending Jumu\'ah (Friday communal prayer), an obligatory act of worship for Muslim men, but had not felt comfortable disclosing this.',
+    culturalExplanation: 'Jumu\'ah (Friday midday prayer) is one of the most important weekly religious obligations in Islam. In Muslim-majority cultures, Friday midday is publicly protected time. In Germany, employees often do not openly discuss religious practice at work, creating a communication gap. The manager\'s low-context (Germany = direct) communication style expected a direct explanation, while Tariq\'s higher-context background made religious disclosure feel inappropriate or vulnerable.',
+    framework: 'hall',
+    frameworkDimension: 'High vs Low Context Communication + Proxemics of Religious Space',
+    hrGuidance: {
+      dos: [
+        'Move recurring Friday meetings to before 11:30am or after 2:00pm',
+        'Create a simple religious observance disclosure form that employees can complete voluntarily',
+        'Brief all line managers on Islamic Friday prayer obligations during onboarding',
+        'If the time cannot change, have a direct, private conversation and ask if there is a religious or personal reason',
+      ],
+      donts: [
+        'Do not assume lateness is a performance or attitude problem before investigating',
+        'Do not schedule mandatory all-hands meetings at Friday midday',
+        'Do not require employees to publicly justify their religious practice to their team',
+        'Do not note religious observance as a performance issue without first attempting accommodation',
+      ],
+      bestPractice: 'Establish a standing team agreement: no mandatory all-hands meetings between 12:00–14:00 on Fridays. This protects Muslim colleagues without requiring individual disclosure and applies consistently to everyone.',
+    },
+    reflectionQuestions: [
+      'What assumptions did the team leader make, and what framework from Hofstede or Hall explains the communication gap?',
+      'How would this situation differ if the team leader were from a high-context culture?',
+      'What policy change would prevent this situation from recurring across the organisation?',
+    ],
+    difficulty: 'beginner',
+  },
+
+  {
+    id: 'ci-002',
+    title: 'The Christmas Party Opt-Out',
+    category: 'holidays',
+    cultures: ['Germany', 'India', 'Ethiopia'],
+    religions: ['hinduism', 'judaism', 'islam'],
+    situation: 'A German company organises its annual Weihnachtsfeier (Christmas party) with mandatory attendance as a "team cohesion" event. Three employees — a Hindu woman from India, a Jewish man from Israel, and a Muslim woman from Ethiopia — feel uncomfortable but feel pressure to attend. The event includes a "Secret Santa" gift exchange and Christmas carols.',
+    whatHappened: 'All three attended out of social pressure. The Jewish employee left early after the carol singing began. The Muslim employee felt awkward about the wine-focused reception. The Hindu employee participated but felt the event did not reflect her as part of the team. None raised their discomfort formally, fearing it would signal a lack of integration.',
+    culturalExplanation: 'Mandatory Christmas events normalise one cultural tradition at the expense of others, reflecting an ethnocentric assumption (Hofstede: culturally conditioned organisational practices). In high-uncertainty-avoidance cultures like Germany, group conformity is expected. Minority employees from high-power-distance backgrounds (India, Ethiopia) may not feel empowered to decline, leading to silent compliance rather than genuine inclusion.',
+    framework: 'hofstede',
+    frameworkDimension: 'Power Distance + Uncertainty Avoidance + Individualism vs Collectivism',
+    hrGuidance: {
+      dos: [
+        'Rebrand the event as an "end-of-year team celebration" rather than a Christmas party',
+        'Make attendance explicitly optional and ensure no social consequences for opting out',
+        'Offer a non-alcoholic drink selection equal in variety to the alcoholic selection',
+        'Replace "Secret Santa" with an optional team activity or experience',
+        'Include team traditions from multiple cultural backgrounds in the event design',
+      ],
+      donts: [
+        'Do not describe a religious holiday celebration as a neutral team event',
+        'Do not note attendance at a Christmas party in any performance context',
+        'Do not assume "everyone celebrates Christmas" in a diverse team',
+        'Do not use only Christmas music or exclusively Christian/Western seasonal imagery',
+      ],
+      bestPractice: 'Survey the team before the event: "What would make this celebration feel inclusive to you?" A 2-minute anonymous survey surfaces needs without requiring anyone to publicly disclose their beliefs.',
+    },
+    reflectionQuestions: [
+      'How does Hofstede\'s Power Distance dimension explain why the three employees did not raise their concerns?',
+      'What is the difference between a Christmas party and an "end-of-year celebration"? Why does the distinction matter legally and culturally?',
+      'How would you redesign this event to maintain team cohesion without centring one religious tradition?',
+    ],
+    difficulty: 'beginner',
+  },
+
+  {
+    id: 'ci-003',
+    title: 'The Beef Buffet',
+    category: 'food',
+    cultures: ['Germany', 'India', 'Nepal'],
+    religions: ['hinduism'],
+    situation: 'An HR team organises a "welcome lunch" for a new team member, Priya, who has joined from India. The restaurant is a German steakhouse and the entire menu is meat-based. Priya, a devout Hindu, does not eat beef. She is presented with a menu where every main course contains beef.',
+    whatHappened: 'Priya said nothing and ate only the bread rolls and a side salad. She felt singled out and unwelcome on her first day. The team, not aware of her dietary requirements, didn\'t notice. The HR manager later learned about it and was embarrassed that no one had asked.',
+    culturalExplanation: 'The cow holds sacred status in Hinduism — eating beef is not merely a preference but a religious transgression for many Hindus. The German cultural norm of default meat-heavy catering reflects low awareness of non-Christian dietary obligations. In India (high-context, high collectivism), Priya was unlikely to raise the issue directly to avoid causing embarrassment on her first day, especially in a high-power-distance situation (new employee, senior team).',
+    framework: 'hofstede',
+    frameworkDimension: 'Individualism vs Collectivism + Power Distance + Uncertainty Avoidance',
+    hrGuidance: {
+      dos: [
+        'Include dietary requirements as a standard field in all onboarding forms',
+        'Always choose restaurants with vegetarian and vegan options when organising team meals',
+        'Never organise a welcome meal at a steakhouse or exclusively meat-based venue',
+        'When in doubt, choose a restaurant with diverse options and let people self-select',
+        'Follow up after the event: "Was everything okay with the food?" signals care',
+      ],
+      donts: [
+        'Do not assume a new employee will speak up if they cannot eat the food',
+        'Do not select restaurants without first knowing the dietary profile of attendees',
+        'Do not serve beef at events without confirming dietary requirements in advance',
+        'Do not treat dietary accommodation as optional or burdensome',
+      ],
+      bestPractice: 'Add to the HR onboarding form: "Do you have any dietary requirements (religious, medical, or personal)? [Yes/No + free text]." This one question prevents most food-related cultural incidents.',
+    },
+    reflectionQuestions: [
+      'Why did Priya not speak up? Use Hofstede\'s Power Distance and Collectivism dimensions to explain.',
+      'What does this incident reveal about the difference between formal inclusion policies and everyday inclusion practices?',
+      'How would you redesign the onboarding process to prevent this from recurring?',
+    ],
+    difficulty: 'beginner',
+  },
+
+  {
+    id: 'ci-004',
+    title: 'The Kara and the Safety Policy',
+    category: 'dress',
+    cultures: ['Germany', 'UK', 'Punjab/India'],
+    religions: ['sikhism'],
+    situation: 'Harpreet joins a food production facility as a quality control engineer. Company policy requires all staff to remove jewellery and metal items before entering the production floor for hygiene reasons. The factory manager asks Harpreet to remove his Kara (a steel bangle — one of the Five Ks of Sikhism) before his shift.',
+    whatHappened: 'Harpreet explains it is a religious article he cannot remove. The manager insists it is a non-negotiable safety policy. Harpreet escalates to HR. The situation creates tension on the shop floor and Harpreet considers leaving the company.',
+    culturalExplanation: 'The Kara is one of the Panj Kakars (Five Ks) — articles of faith worn by initiated (Amritdhari) Sikhs that cannot be removed. It is not jewellery in a decorative sense; it is a religious obligation equivalent in weight to a Christian wearing a cross or a Muslim wearing hijab. German law under AGG requires employers to seek reasonable accommodation before enforcing a blanket policy that disadvantages religious minorities.',
+    framework: 'globe',
+    frameworkDimension: 'Humane Orientation + Institutional vs In-Group Collectivism',
+    hrGuidance: {
+      dos: [
+        'Treat the Kara as a protected religious article, not decorative jewellery',
+        'Explore solutions: a tubular bandage or mesh sleeve over the Kara is standard practice in food and medical environments',
+        'Consult with the employee on the solution — do not impose a solution without dialogue',
+        'Update the jewellery policy to distinguish religious articles from decorative items',
+        'Document the accommodation solution in writing to protect both parties',
+      ],
+      donts: [
+        'Do not apply a blanket "no jewellery" policy without a religious exemption process',
+        'Do not ask Harpreet to leave the Kara at home — this is equivalent to asking him to abandon his faith',
+        'Do not treat this as a disciplinary matter',
+        'Do not delay resolution — every day without accommodation increases legal and reputational risk',
+      ],
+      bestPractice: 'Build a religious exemption clause into all safety and uniform policies before hiring: "Exemptions for religious articles of faith will be accommodated through an individual risk assessment and mutually agreed solution." This prevents escalation before it starts.',
+    },
+    reflectionQuestions: [
+      'Where is the line between a legitimate safety requirement and indirect religious discrimination?',
+      'What is the difference between a religious article and a personal preference, and why does this distinction matter legally?',
+      'How does this incident reflect the GLOBE dimension of Humane Orientation in organisational culture?',
+    ],
+    difficulty: 'intermediate',
+  },
+
+  {
+    id: 'ci-005',
+    title: 'Silence in the Meeting Room',
+    category: 'meetings',
+    cultures: ['Germany', 'Japan', 'South Korea'],
+    religions: [],
+    situation: 'A German project manager leads a cross-functional team including two Japanese engineers (Kenji and Yuki) and a Korean developer (Ji-Woo). In sprint planning meetings, the German and Dutch team members debate proposals directly and loudly. Kenji and Yuki rarely speak. When the German PM asks them directly "Do you agree?", they always say "Yes." The project consistently runs into implementation problems that Kenji and Yuki had foreseen but never raised.',
+    whatHappened: 'Post-mortem revealed that Kenji had identified the critical technical risk three sprints earlier but had not felt it was appropriate to contradict the project manager publicly. In Japan and Korea, direct public disagreement with a senior figure causes loss of face (for both parties) and is avoided through silence or indirect signals.',
+    culturalExplanation: 'Japan and South Korea score very high on Power Distance and are high-context communication cultures (Hall). Silence does not mean agreement — it often signals discomfort, disagreement, or deference to hierarchy. Germany is a low-context culture where silence is unusual and direct disagreement is expected and respected. The German PM misread silence as consensus.',
+    framework: 'hall',
+    frameworkDimension: 'High vs Low Context Communication + Information Speed',
+    hrGuidance: {
+      dos: [
+        'Create structured input channels: written pre-meeting comments, anonymous risk flags, or async feedback tools',
+        'Ask open questions: "What concerns might we be missing?" rather than "Do you agree?"',
+        'Build one-on-one check-ins before major decisions to surface concerns privately',
+        'Explicitly tell the team: "Raising a concern is valued and will not affect your standing"',
+        'Train all team leads on high-context communication styles before managing international teams',
+      ],
+      donts: [
+        'Do not interpret silence as agreement in international teams',
+        'Do not ask yes/no questions in public meetings and expect honest answers from high-context team members',
+        'Do not penalise quiet team members — their silence may carry more information than the vocal members\' words',
+        'Do not assume the German/Western meeting format is the universal default',
+      ],
+      bestPractice: 'Adopt "silent brainstorming" protocols: before any decision, allow 5 minutes of written input (via shared doc or Miro) before verbal discussion. This gives high-context, reflective communicators equal input without requiring them to interrupt or contradict publicly.',
+    },
+    reflectionQuestions: [
+      'What is the difference between high-context and low-context communication, and how did this gap create a project failure?',
+      'How would a manager trained in Hofstede\'s Power Distance dimension have run this meeting differently?',
+      'What structural changes to the meeting format would resolve this without requiring Japanese and Korean team members to change their cultural norms?',
+    ],
+    difficulty: 'intermediate',
+  },
+
+  {
+    id: 'ci-006',
+    title: 'The Ramadan Performance Review',
+    category: 'prayer',
+    cultures: ['Germany', 'Turkey', 'Morocco'],
+    religions: ['islam'],
+    situation: 'During Ramadan, Fatima\'s line manager notices she appears tired and less responsive in afternoon meetings. He schedules her quarterly performance review for 3pm and notes in the review that her "energy levels and engagement have decreased noticeably over the past month." Fatima does not mention Ramadan.',
+    whatHappened: 'Fatima receives a below-average performance rating for Q1, citing "declining engagement." She is deeply hurt, knowing this directly corresponds to Ramadan fasting. She consults with HR but fears the review is already filed.',
+    culturalExplanation: 'Ramadan fasting (no food or water from dawn to sunset) has measurable physiological effects: lower energy in the afternoon is a predictable and known result, not a performance deficiency. Fatima did not disclose her fasting because religious practice disclosure can feel risky in a German corporate environment. The manager\'s assessment was culturally uninformed — he measured performance against a non-fasting baseline without awareness.',
+    framework: 'hofstede',
+    frameworkDimension: 'Uncertainty Avoidance + Power Distance',
+    hrGuidance: {
+      dos: [
+        'Brief all line managers annually on Ramadan timing and its physiological impact on performance',
+        'Shift performance-intensive work and key meetings to morning hours during Ramadan for affected employees',
+        'Ask employees (privately, sensitively): "Are there any periods this quarter where you\'d like to flag something that may have affected your output?"',
+        'Correct performance records if it is later established that a religious observance was not considered',
+        'Create a short HR guide: "Managing Performance During Religious Observances"',
+      ],
+      donts: [
+        'Do not schedule critical performance reviews at 3pm during Ramadan',
+        'Do not document reduced afternoon energy during Ramadan as a performance issue without context',
+        'Do not require employees to disclose their fasting — but create a psychologically safe environment where they can',
+        'Do not apply a single performance standard across the year without accounting for known religious periods',
+      ],
+      bestPractice: 'Add a Ramadan flag to the HR calendar: "Line managers with Muslim direct reports should be briefed that Q1/Q2 intersects with Ramadan this year. Performance assessments covering this period should note contextual factors."',
+    },
+    reflectionQuestions: [
+      'What is the difference between equal treatment and equitable treatment in a performance management context?',
+      'Why did Fatima not disclose her fasting, and what does this reveal about the company\'s psychological safety culture?',
+      'How does Hofstede\'s Uncertainty Avoidance dimension explain the manager\'s rigid application of the performance standard?',
+    ],
+    difficulty: 'intermediate',
+  },
+
+  {
+    id: 'ci-007',
+    title: 'The Handshake That Wasn\'t',
+    category: 'greetings',
+    cultures: ['Germany', 'Pakistan', 'Saudi Arabia'],
+    religions: ['islam'],
+    situation: 'At a client onboarding meeting, the German account manager Thomas extends his hand to greet Amira, a senior analyst from Pakistan. Amira gently declines the handshake, placing her hand on her heart instead with a slight nod. Thomas is visibly confused and slightly offended. He later tells a colleague: "She was quite unfriendly — didn\'t even shake my hand."',
+    whatHappened: 'Amira follows the Islamic practice of not shaking hands with unrelated members of the opposite sex. Her gesture (hand on heart) was a sincere and respectful alternative greeting. Thomas misread the refusal as personal rejection or unfriendliness, which coloured his perception of Amira throughout the meeting.',
+    culturalExplanation: 'In many Muslim communities, physical contact (including handshakes) between unrelated men and women is considered inappropriate. This is a religious boundary, not a social slight. The hand-on-heart gesture is a common, respectful alternative. In Germany (low-context, direct, universalist — Trompenaars), the handshake is the universal professional greeting; refusing it is interpreted as a breach of social norms. This is a textbook Trompenaars Universalism vs Particularism conflict.',
+    framework: 'trompenaars',
+    frameworkDimension: 'Universalism vs Particularism + Neutral vs Affective',
+    hrGuidance: {
+      dos: [
+        'Include cross-cultural greeting norms in client-facing team training',
+        'Brief client relationship managers: not all cultures use the handshake as a universal greeting',
+        'Train staff to watch for alternative greeting signals (hand on heart, slight bow, namaste) and reciprocate respectfully',
+        'Correct misperceptions immediately: if a colleague expresses bias after a greeting refusal, address it in the moment',
+      ],
+      donts: [
+        'Do not interpret a religious boundary as unfriendliness or unprofessionalism',
+        'Do not put a client or employee in a position where they must choose between their religious practice and professional acceptance',
+        'Do not assume the German handshake norm applies universally in international or multicultural environments',
+      ],
+      bestPractice: 'In client-facing onboarding: "Our team respects diverse cultural greeting practices. A nod, bow, or hand-on-heart is as warmly received as a handshake." A single sentence in meeting norms documents normalises diversity.',
+    },
+    reflectionQuestions: [
+      'How does Trompenaars\' Universalism vs Particularism dimension explain Thomas\'s reaction?',
+      'What is the difference between a personal insult and a cultural/religious boundary? How do we train staff to make this distinction in real time?',
+      'How would this incident have unfolded if Thomas had been briefed on Islamic greeting norms beforehand?',
+    ],
+    difficulty: 'beginner',
+  },
+
+  {
+    id: 'ci-008',
+    title: 'The Promotion That Skipped the Seniority',
+    category: 'hierarchy',
+    cultures: ['Germany', 'Japan', 'India'],
+    religions: [],
+    situation: 'A German tech company promotes a 27-year-old German engineer, Max, over three senior Indian and Japanese colleagues who have been at the company for 5–8 years. The promotion is based on merit — Max delivered an outstanding project. The senior colleagues are visibly uncomfortable but say nothing. Team dynamics deteriorate sharply over the following weeks.',
+    whatHappened: 'In the Indian and Japanese cultural frameworks, seniority carries significant weight in determining hierarchy and respect. Being passed over by a significantly younger colleague is a deep status and face loss. None of the three raised the issue directly — high Power Distance and face-saving norms prevented open confrontation. The German management read their silence as acceptance.',
+    culturalExplanation: 'Hofstede\'s Power Distance and Long-term Orientation dimensions explain this directly. High-PDI cultures (India, Japan) expect hierarchical advancement to be at least partially tied to tenure and age. The concept of "face" (mentsu in Japanese, izzat in Hindi culture) means public demotion in status carries lasting psychological weight. Germany\'s low PDI and Achievement-based culture (Trompenaars: Achievement vs Ascription) treats pure merit promotion as fair and expected.',
+    framework: 'hofstede',
+    frameworkDimension: 'Power Distance + Long-term Orientation + Achievement vs Ascription (Trompenaars)',
+    hrGuidance: {
+      dos: [
+        'When making cross-cultural promotion decisions, brief affected team members individually and with sensitivity',
+        'Explain the criteria clearly and personally to those passed over',
+        'Acknowledge the tenure and contribution of the senior colleagues publicly',
+        'In diverse teams, consider giving senior colleagues visible leadership roles in adjacent areas to maintain status',
+        'Create a career path document that makes advancement criteria explicit and culturally accessible',
+      ],
+      donts: [
+        'Do not assume merit-only promotion is universally understood as fair',
+        'Do not interpret silence from high-PDI employees as acceptance or approval',
+        'Do not make promotion announcements without first speaking privately to those who were candidates',
+        'Do not ignore team dynamics after a promotion — monitor for 30–60 days',
+      ],
+      bestPractice: 'Build a "Promotion Communication Protocol" for international teams: 1. Private 1-on-1 with all candidates before any announcement. 2. Explanation of criteria. 3. Specific acknowledgement of what the non-promoted employees contribute. 4. Clarity on their own progression path. This does not change the decision — it changes how it lands.',
+    },
+    reflectionQuestions: [
+      'What is the difference between Hofstede\'s Achievement-orientation and Ascription-orientation, and why does it affect how promotions are perceived?',
+      'What does Hofstede\'s Power Distance dimension predict about how Indian and Japanese employees will respond to being passed over?',
+      'How could the promotion communication process have been redesigned to prevent the team breakdown?',
+    ],
+    difficulty: 'advanced',
+  },
+
+  {
+    id: 'ci-009',
+    title: 'Yom Kippur and the Project Deadline',
+    category: 'holidays',
+    cultures: ['Germany', 'Israel', 'USA'],
+    religions: ['judaism'],
+    situation: 'An HR manager schedules a critical project launch deadline and mandatory all-hands presentation for the same day as Yom Kippur. David, the only observant Jewish team member, notifies the manager 2 weeks in advance that he will not be able to attend. The manager responds: "This is a key business date — can you make an exception just this once?"',
+    whatHappened: 'David felt shocked and discriminated against. He escalated to the company\'s Diversity & Inclusion office. The manager, genuinely unaware, had not realised that asking someone to "make an exception" to Yom Kippur is equivalent to asking a Catholic to "skip Christmas mass just this once." The project deadline was eventually moved, but the damage to trust was significant.',
+    culturalExplanation: 'Yom Kippur is the holiest day in the Jewish calendar — the Day of Atonement. It is a 25-hour fast and full day of synagogue prayer. No observant Jew will work on this day under any circumstances. The manager\'s ignorance reflected a monocultural workplace assumption that major religious obligations are flexible. In Trompenaars\' framework, the universalist assumption ("business rules apply to everyone") collided with the particular ("this religious obligation is non-negotiable").',
+    framework: 'trompenaars',
+    frameworkDimension: 'Universalism vs Particularism',
+    hrGuidance: {
+      dos: [
+        'Integrate a multi-faith calendar into project planning tools at the start of each year',
+        'Brief project managers: Yom Kippur, Eid al-Adha, and Diwali are high-priority religious dates for team members',
+        'Treat major religious holidays with the same respect as German public holidays (Feiertage)',
+        'When an employee notifies you of a religious obligation conflict, the default response should be "we will adjust the date"',
+        'Apologise and correct: when a mistake happens, acknowledge it explicitly and move the date',
+      ],
+      donts: [
+        'Do not ask an employee to "make an exception" to their holiest religious observance',
+        'Do not schedule mandatory events on Yom Kippur, Eid al-Fitr, Eid al-Adha, or Diwali without first checking team composition',
+        'Do not treat non-German, non-Christian religious holidays as less important than Catholic or Lutheran ones',
+        'Do not wait for employees to raise the conflict — proactively check the calendar',
+      ],
+      bestPractice: 'Deploy a "Religious Observance Calendar Overlay" in your project management tool (Jira, Asana, etc.) that flags major religious dates from 10+ traditions. Free tools exist (Interfaith Calendar API). A 5-minute setup prevents situations like this entirely.',
+    },
+    reflectionQuestions: [
+      'What assumptions were embedded in the manager\'s request for David to "make an exception"?',
+      'How does a multi-faith calendar in project planning tools represent a structural solution rather than an individual accommodation?',
+      'Use Trompenaars\' Universalism vs Particularism to frame what went wrong and what a Particularist response would have looked like.',
+    ],
+    difficulty: 'beginner',
+  },
+
+  {
+    id: 'ci-010',
+    title: 'Time is a Different Clock',
+    category: 'time',
+    cultures: ['Germany', 'Brazil', 'Nigeria'],
+    religions: [],
+    situation: 'A German project manager, Klaus, leads a joint venture team with Brazilian and Nigerian colleagues. Klaus opens every call at the exact scheduled time and is visibly irritated when the Brazilian and Nigerian team members join 5–10 minutes late. He starts calls without them and sends emails noting their "lack of punctuality." The Brazilian team calls him "cold and robotic." Klaus considers both teams as "unprofessional."',
+    whatHappened: 'The relationship between Klaus and both teams deteriorated. The Brazilian and Nigerian team members felt disrespected — being 5–10 minutes late in their cultural context is entirely normal and even polite (arriving exactly on time can feel abrupt). Klaus interpreted this as a sign of low commitment and included it in a project status report.',
+    culturalExplanation: 'Germany is one of the world\'s most monochronic, time-strict cultures (Hall: Monochronic vs Polychronic time). Brazil and Nigeria operate in polychronic time cultures — where relationships, conversations, and context take priority over exact clock adherence. The concept of "Brazilian time" (horário brasileiro) is widely understood in Brazil as a normal schedule buffer. Neither party is "wrong" — they are operating from different cultural time maps.',
+    framework: 'hall',
+    frameworkDimension: 'Monochronic vs Polychronic Time',
+    hrGuidance: {
+      dos: [
+        'Establish explicit time norms at project kickoff: "For our team, meetings start at the scheduled time AND we allow a 5-minute joining window before starting content."',
+        'Have a direct, non-judgmental conversation about time expectations — frame it as a team agreement, not a correction',
+        'Distinguish between time culture differences and genuine reliability issues',
+        'Build buffer time into meeting agendas for polychronic team members',
+        'Train international project managers on monochronic vs polychronic time before deployment',
+      ],
+      donts: [
+        'Do not include time-culture behaviour in performance reviews without first attempting a cultural conversation',
+        'Do not interpret polychronic lateness as disrespect or low commitment',
+        'Do not start calls and exclude latecomers as a "lesson" — this damages relationships and project outcomes',
+        'Do not assume German time norms are the universal professional standard',
+      ],
+      bestPractice: 'Create a "Team Working Agreement" at project kickoff that explicitly covers: meeting time norms, response time expectations, preferred communication channels, and "what does punctuality mean in our team?" This surfaces cultural differences as a team design question rather than a compliance issue.',
+    },
+    reflectionQuestions: [
+      'What is the difference between Hall\'s monochronic and polychronic time orientations, and how does each culture justify its own norm as "professional"?',
+      'How would Trompenaars\' Sequential vs Synchronic time dimension add nuance to this analysis?',
+      'Design a 5-minute "team time agreement" conversation that a project manager could run at kickoff to prevent this conflict.',
+    ],
+    difficulty: 'beginner',
+  },
+
+  {
+    id: 'ci-011',
+    title: 'The Prayer Room Request',
+    category: 'prayer',
+    cultures: ['Germany', 'Egypt', 'Indonesia'],
+    religions: ['islam'],
+    situation: 'A Muslim employee, Hassan, formally requests a designated prayer room in the office. The company has 250 employees, multiple unused meeting rooms, and a large break room. The facilities manager responds that "we are a secular workplace and do not provide religious services." Hassan escalates. The company\'s lawyer advises them to check their AGG obligations.',
+    whatHappened: 'The facilities manager\'s response reflected a common but legally risky assumption: that a "secular workplace" means a religion-free one. German law (AGG) does not require a purpose-built prayer room but does require reasonable accommodation of religious practice where operationally feasible. With multiple unused rooms available, denying the request entirely carries legal risk.',
+    culturalExplanation: 'Germany\'s constitutional framework (GG Art. 4) explicitly protects freedom of religion, including religious practice. The GLOBE dimension of Humane Orientation — the degree to which an organisation rewards fairness, generosity and care — predicts whether organisations proactively accommodate religious needs or require legal pressure to do so.',
+    framework: 'globe',
+    frameworkDimension: 'Humane Orientation + Institutional Collectivism',
+    hrGuidance: {
+      dos: [
+        'Designate a multi-faith quiet room — this serves Muslim, Jewish, Christian, Buddhist and all other employees',
+        'Frame the room as a "quiet reflection and wellbeing space" — this is inclusive and avoids any perception of religious favouritism',
+        'A bookable meeting room with a simple mat and no chairs is sufficient — it does not require permanent fixtures',
+        'Respond to prayer room requests within 5 working days with either an approval or an alternative',
+        'Proactively mention the quiet room in the onboarding pack',
+      ],
+      donts: [
+        'Do not conflate "secular workplace" with "no religious accommodation" — these are not the same',
+        'Do not delay or deny a prayer room request without assessing operational feasibility',
+        'Do not create a Muslim-specific prayer room — a multi-faith space serves everyone and avoids differential treatment',
+        'Do not require employees to use toilet cubicles for prayer — this is undignified and legally problematic',
+      ],
+      bestPractice: 'Designate one multi-faith room proactively — before anyone requests it. Add it to the office map and onboarding pack. The total cost is a sign and a booking slot in the calendar system. The legal and cultural risk avoided is significant.',
+    },
+    reflectionQuestions: [
+      'What is the legal distinction in German law between a secular workplace and one that denies religious accommodation?',
+      'How does the GLOBE dimension of Humane Orientation predict an organisation\'s response to this request?',
+      'What is the difference between equal treatment ("we treat everyone the same") and equitable accommodation in a diverse workforce?',
+    ],
+    difficulty: 'intermediate',
+  },
+
+  {
+    id: 'ci-012',
+    title: 'The Feedback That Backfired',
+    category: 'communication',
+    cultures: ['Germany', 'South Korea', 'Vietnam'],
+    religions: [],
+    situation: 'A German senior manager, Petra, gives direct negative feedback to Ji-Su, a Korean junior analyst, in a team meeting: "Ji-Su, this analysis is not at the level I expected. The numbers are wrong and the conclusion is not supported." Petra intends this as helpful and efficient — she would want the same direct feedback herself. Ji-Su goes silent and visibly withdraws for the rest of the meeting and the following days.',
+    whatHappened: 'Ji-Su experienced severe face loss (kibun in Korean — mood and dignity). Public correction by a superior is deeply humiliating in Korean culture. She submitted her resignation two weeks later, citing "cultural mismatch." In the exit interview she said: "I felt publicly shamed in front of the whole team. I could not recover from that."',
+    culturalExplanation: 'Germany is a classic low-context, direct, low-PDI culture — direct negative feedback is professional, honest, and respectful. South Korea is a high-context, high-PDI, face-conscious culture where public criticism from a superior is a severe social rupture. Hofstede\'s Power Distance and Hall\'s High-Context Communication dimensions both predict this clash. Ji-Su\'s silence and withdrawal were strong signals of distress — but in a low-context culture, these signals were invisible.',
+    framework: 'hofstede',
+    frameworkDimension: 'Power Distance + Individualism vs Collectivism (face)',
+    hrGuidance: {
+      dos: [
+        'Train managers on feedback norms in high-context, high-PDI cultures before managing international teams',
+        'Default to private feedback for significant corrections — especially with employees from high-PDI cultures',
+        'Build a "feedback protocol" for international teams: critical feedback → private first, then agreed framing for team learning',
+        'If public correction has occurred, follow up privately the same day to repair the relationship',
+        'Ask in 1-on-1s: "How do you prefer to receive feedback?" — this opens the conversation without exposing cultural difference',
+      ],
+      donts: [
+        'Do not give significant corrective feedback publicly to team members from high-PDI, face-sensitive cultures',
+        'Do not interpret silence and withdrawal as acceptance or resilience',
+        'Do not assume that German directness is universally experienced as honest and respectful',
+        'Do not wait until an exit interview to discover a cultural rupture',
+      ],
+      bestPractice: 'Adopt a "public praise, private correction" norm for international teams. This is low-cost, immediately effective, and does not require managers to abandon their direct communication style — it only redirects where critical feedback lands.',
+    },
+    reflectionQuestions: [
+      'How do Hofstede\'s Power Distance and Collectivism dimensions explain why this feedback caused Ji-Su to resign?',
+      'What is "face" as a cultural concept, and how does it interact with workplace feedback practices?',
+      'Design a feedback protocol for a German manager leading a Korean-German team that preserves directness while protecting psychological safety.',
+    ],
+    difficulty: 'advanced',
+  },
+
+  {
+    id: 'ci-013',
+    title: 'Vaisakhi and the Rescheduling Request',
+    category: 'holidays',
+    cultures: ['Germany', 'UK', 'Punjab/Canada'],
+    religions: ['sikhism'],
+    situation: 'Gurpreet requests the 13th of April as annual leave, explaining it is Vaisakhi — the most important Sikh holiday. His manager, who manages a team of 12, says the team\'s leave policy does not allow more than 3 people off on any given day and there are already 3 approved. He offers Gurpreet the 14th instead. Gurpreet explains the 13th is the religious observance day.',
+    whatHappened: 'The manager held his position — policy is policy. Gurpreet took the day as sick leave in order to observe Vaisakhi. At the next team meeting, the manager reminded everyone about the leave policy. Gurpreet felt targeted and humiliated. He filed an AGG complaint.',
+    culturalExplanation: 'Vaisakhi (13 April) commemorates the founding of the Khalsa in 1699 and is the most significant Sikh religious occasion. It has a fixed solar calendar date — it cannot be moved to the 14th. This is a Trompenaars Universalism vs Particularism case: the manager applied a universal rule (leave policy) without considering the particular (a fixed, non-negotiable religious date). The AGG in Germany requires that a blanket leave policy must bend for protected religious observance where operationally feasible.',
+    framework: 'trompenaars',
+    frameworkDimension: 'Universalism vs Particularism',
+    hrGuidance: {
+      dos: [
+        'Build a "religious observance leave" category separate from annual leave that is not subject to team quotas',
+        'Train managers: religious holidays with fixed dates (Yom Kippur, Vaisakhi, Eid) cannot be moved — the accommodation is the leave, not a different day',
+        'Document a religious observance policy: "Employees may request up to [X] days of religious leave per year. These are assessed on operational feasibility, not team leave quotas."',
+        'When a conflict arises, explore creative solutions first: temporary backfill, adjusted workload, swapped shifts',
+        'Apologise and correct: the manager\'s handling of this incident required a formal apology',
+      ],
+      donts: [
+        'Do not apply a blanket leave quota to fixed religious holy days',
+        'Do not suggest an employee move a religious observance to a different day',
+        'Do not allow a situation where an employee takes sick leave to observe their religion — this creates legal liability',
+        'Do not treat a religious accommodation request the same as a holiday preference',
+      ],
+      bestPractice: 'Create a "Religious Observance Leave Policy" — separate from annual leave, with a simple form and a 10-day advance notice requirement. Cap at 3 days per year. This costs nothing, prevents AGG violations, and sends a powerful cultural inclusion signal.',
+    },
+    reflectionQuestions: [
+      'How does Trompenaars\' Universalism vs Particularism explain the manager\'s decision, and what would a Particularist approach have looked like?',
+      'What is the difference between treating everyone "equally" and treating everyone "fairly" in the context of religious accommodation?',
+      'How should a religious observance leave policy be structured to be both operationally manageable and legally compliant?',
+    ],
+    difficulty: 'intermediate',
+  },
+
+  {
+    id: 'ci-014',
+    title: 'The Turban and the Hard Hat',
+    category: 'dress',
+    cultures: ['Germany', 'UK', 'Punjab'],
+    religions: ['sikhism'],
+    situation: 'A construction company hires Manpreet as a site safety officer. Manpreet wears a turban (Dastar) at all times. The company\'s health and safety policy requires all on-site personnel to wear a hard hat. The site manager says the policy is non-negotiable and cites Berufsgenossenschaft (German occupational safety association) requirements.',
+    whatHappened: 'The site manager initially told Manpreet he could not be on site without a hard hat. Manpreet provided documentation from the UK Health and Safety Executive (widely used in EU contexts) which establishes that Sikhs wearing turbans are legally exempt from hard hat requirements and that liability shifts to the employee. The German manager was unaware of any German-specific equivalent.',
+    culturalExplanation: 'This is a real legal and cultural intersection. In Germany, the Berufsgenossenschaft (BG) rules on hard hats exist for safety. The Sikh turban is a mandatory article of faith. UK law (Employment Act 1989 §11) explicitly exempts Sikhs from hard hat requirements on construction sites — an established precedent. German law has no direct equivalent but the AGG religious discrimination framework and EU law (Equal Treatment Directive 2000/78/EC) require reasonable accommodation.',
+    framework: 'globe',
+    frameworkDimension: 'Institutional Collectivism + Humane Orientation',
+    hrGuidance: {
+      dos: [
+        'Before hiring, assess whether any safety requirements will conflict with religious dress — and develop a protocol',
+        'Contact your Berufsgenossenschaft directly for guidance on Sikh turban exemptions — BG Bau has issued guidance',
+        'Document a "religious exemption to PPE" policy with a signed acknowledgement of modified liability',
+        'Allow the employee to use a patka (smaller turban) or bump cap over the turban as an interim solution where available',
+        'Seek legal advice from a German employment lawyer with AGG expertise before enforcing a blanket refusal',
+      ],
+      donts: [
+        'Do not refuse site access without first seeking legal advice on your AGG obligations',
+        'Do not treat this as a binary choice (turban OR job) without exhausting accommodation options',
+        'Do not assume UK case law does not apply in Germany — EU Equal Treatment Directives create a common floor',
+        'Do not put the employee in a position of choosing between their faith and their safety or employment',
+      ],
+      bestPractice: 'Develop a "Religious Dress and PPE Protocol" in advance. For Sikh employees: contact BG Bau for guidance, use a signed liability acknowledgement form (as used in UK construction), and document the accommodation. This protects both parties and ensures legal compliance.',
+    },
+    reflectionQuestions: [
+      'Where does religious freedom end and occupational safety begin? How should organisations navigate this tension?',
+      'What is the role of the employer in seeking legal advice vs defaulting to a blanket safety policy?',
+      'How does the GLOBE Humane Orientation dimension predict whether an organisation finds a creative solution or defaults to a blanket refusal?',
+    ],
+    difficulty: 'advanced',
+  },
+
+  {
+    id: 'ci-015',
+    title: 'The Indirect Yes',
+    category: 'communication',
+    cultures: ['Germany', 'China', 'Thailand'],
+    religions: [],
+    situation: 'A German sales director, Markus, is negotiating a supply contract with a Chinese partner company. In every meeting, the Chinese delegation agrees enthusiastically, says "yes" to every question, and promises everything. Markus returns to Germany confident a deal is closed. Three months later, deliveries are late, specifications are not met, and the Chinese partner denies having agreed to specific terms.',
+    whatHappened: 'In Chinese (and broadly East Asian) high-context communication culture, saying "no" directly — especially to a senior partner — is face-threatening. "Yes" often means "I hear you" or "I acknowledge your point," not "I commit to this." The Chinese delegation had significant internal concerns they never expressed directly. Markus, from a low-context German background, interpreted "yes" as unconditional agreement.',
+    culturalExplanation: 'Hall\'s High vs Low Context Communication framework is directly at play. China scores very high on context — meaning is embedded in relationship, tone, situation and silence, not in explicit verbal commitments. Germany is very low context — what is said is what is meant. Trompenaars\' Specific vs Diffuse dimension also applies: Germans want specific contractual clarity; Chinese business relationships operate in a diffuse context of relationship, trust and face.',
+    framework: 'hall',
+    frameworkDimension: 'High vs Low Context Communication',
+    hrGuidance: {
+      dos: [
+        'Brief all staff doing business in high-context cultures on the meaning of indirect communication',
+        'Always confirm key commitments in writing immediately after meetings: "Following our discussion, I understand we have agreed to X. Please confirm in writing."',
+        'Build more relationship time into negotiations — Chinese business culture prioritises trust before contract',
+        'Use a trusted local intermediary or cultural broker for high-stakes negotiations',
+        'Treat silence, hesitation, or vague responses as signals of concern, not agreement',
+      ],
+      donts: [
+        'Do not rely on verbal "yes" in high-context business cultures as a binding commitment',
+        'Do not rush to contract stage without building trust and surfacing concerns',
+        'Do not interpret enthusiasm as agreement — it may be politeness or relationship maintenance',
+        'Do not send a junior team member to high-stakes cross-cultural negotiations without cultural briefing',
+      ],
+      bestPractice: 'Implement a "mirror protocol" for international negotiations: at the end of every meeting, have both parties independently write down the key points agreed. Compare the lists. Differences surface misalignments before they become expensive delivery failures.',
+    },
+    reflectionQuestions: [
+      'What is the difference between "yes" in a low-context and a high-context culture?',
+      'How does Trompenaars\' Specific vs Diffuse dimension explain the different expectations around contractual vs relationship-based commitment?',
+      'Design a negotiation protocol for a German company entering the Chinese market that respects both cultural frameworks.',
+    ],
+    difficulty: 'advanced',
+  },
+]
+
+export function getIncidentsByCategory(category: string): CriticalIncident[] {
+  if (category === 'all') return criticalIncidents
+  return criticalIncidents.filter((i) => i.category === category)
+}
+
+export function getIncidentsByReligion(religionId: string): CriticalIncident[] {
+  return criticalIncidents.filter((i) => i.religions.includes(religionId))
+}
+
+export function getIncidentsByFramework(framework: string): CriticalIncident[] {
+  return criticalIncidents.filter((i) => i.framework === framework)
+}
+
+export const incidentCategories = [
+  { id: 'all', label: 'All Scenarios', icon: '📚' },
+  { id: 'prayer', label: 'Prayer & Observance', icon: '🙏' },
+  { id: 'food', label: 'Food & Dietary', icon: '🍽️' },
+  { id: 'dress', label: 'Religious Dress', icon: '👔' },
+  { id: 'communication', label: 'Communication', icon: '💬' },
+  { id: 'hierarchy', label: 'Hierarchy & Status', icon: '🏛️' },
+  { id: 'time', label: 'Time & Punctuality', icon: '🕐' },
+  { id: 'holidays', label: 'Religious Holidays', icon: '📅' },
+  { id: 'greetings', label: 'Greetings & Contact', icon: '🤝' },
+  { id: 'meetings', label: 'Meetings & Decisions', icon: '📊' },
+]

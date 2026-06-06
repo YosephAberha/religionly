@@ -4,6 +4,10 @@ import HomePage from './pages/HomePage'
 import BrowsePage from './pages/BrowsePage'
 import ReligionDetailPage from './pages/ReligionDetailPage'
 import WorldMapPage from './pages/WorldMapPage'
+import WorkplaceGuidePage from './pages/WorkplaceGuidePage'
+import CriticalIncidentsPage from './pages/CriticalIncidentsPage'
+import CulturalFrameworksPage from './pages/CulturalFrameworksPage'
+import CommunicationStylesPage from './pages/CommunicationStylesPage'
 import { PageId } from './types'
 
 export default function App() {
@@ -29,6 +33,10 @@ export default function App() {
             <ReligionDetailPage religionId={selectedReligionId} onNavigate={navigate} />
           )}
           {page === 'map' && <WorldMapPage />}
+          {page === 'workplace' && <WorkplaceGuidePage />}
+          {page === 'incidents' && <CriticalIncidentsPage />}
+          {page === 'frameworks' && <CulturalFrameworksPage />}
+          {page === 'communication' && <CommunicationStylesPage />}
         </div>
 
         {/* Disclaimer */}

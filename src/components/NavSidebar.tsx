@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Home, BookOpen, Globe, Menu, X } from 'lucide-react'
+import { Home, BookOpen, Globe, Menu, X, Briefcase, AlertTriangle, BarChart3, MessageSquare } from 'lucide-react'
 import { useState } from 'react'
 import { PageId } from '../types'
 
@@ -8,10 +8,24 @@ interface NavSidebarProps {
   onNavigate: (page: PageId) => void
 }
 
-const navItems: { id: PageId; label: string; icon: typeof Home }[] = [
-  { id: 'home', label: 'Home', icon: Home },
-  { id: 'browse', label: 'Explore Religions', icon: BookOpen },
-  { id: 'map', label: 'World Map', icon: Globe },
+const navSections = [
+  {
+    label: 'Religion',
+    items: [
+      { id: 'home' as PageId, label: 'Home', icon: Home },
+      { id: 'browse' as PageId, label: 'Explore Religions', icon: BookOpen },
+      { id: 'map' as PageId, label: 'World Map', icon: Globe },
+    ],
+  },
+  {
+    label: 'HR Training',
+    items: [
+      { id: 'workplace' as PageId, label: 'Workplace Guide', icon: Briefcase },
+      { id: 'incidents' as PageId, label: 'Critical Incidents', icon: AlertTriangle },
+      { id: 'frameworks' as PageId, label: 'Cultural Frameworks', icon: BarChart3 },
+      { id: 'communication' as PageId, label: 'Communication Styles', icon: MessageSquare },
+    ],
+  },
 ]
 
 export default function NavSidebar({ activePage, onNavigate }: NavSidebarProps) {
@@ -21,6 +35,9 @@ export default function NavSidebar({ activePage, onNavigate }: NavSidebarProps) 
     onNavigate(page)
     setMobileOpen(false)
   }
+
+  const isActive = (id: PageId) =>
+    activePage === id || (activePage === 'religion' && id === 'browse')
 
   return (
     <>
@@ -58,48 +75,56 @@ export default function NavSidebar({ activePage, onNavigate }: NavSidebarProps) 
         `}
       >
         {/* Logo */}
-        <div className="p-6 pb-2">
+        <div className="p-6 pb-4">
           <h1
             className="text-xl font-bold tracking-tight cursor-pointer"
             onClick={() => handleNav('home')}
           >
             <span className="text-gradient bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Faith Explorer
+              Religionly
             </span>
           </h1>
-          <p className="text-xs text-white/40 mt-1">Comparative Religion Engine</p>
+          <p className="text-xs text-white/40 mt-1">Intercultural HR Training Platform</p>
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 px-3 py-4 space-y-1">
-          {navItems.map((item) => {
-            const Icon = item.icon
-            const isActive = activePage === item.id || (activePage === 'religion' && item.id === 'browse')
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNav(item.id)}
-                className={`
-                  w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium
-                  transition-all duration-200
-                  ${
-                    isActive
-                      ? 'bg-white/10 text-white border border-white/10'
-                      : 'text-white/50 hover:text-white/80 hover:bg-white/5'
-                  }
-                `}
-              >
-                <Icon size={18} />
-                <span>{item.label}</span>
-              </button>
-            )
-          })}
+        <nav className="flex-1 px-3 py-2 space-y-5 overflow-y-auto">
+          {navSections.map((section) => (
+            <div key={section.label}>
+              <p className="text-xs font-semibold text-white/25 uppercase tracking-wider px-4 mb-1.5">
+                {section.label}
+              </p>
+              <div className="space-y-0.5">
+                {section.items.map((item) => {
+                  const Icon = item.icon
+                  const active = isActive(item.id)
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNav(item.id)}
+                      className={`
+                        w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium
+                        transition-all duration-200
+                        ${active
+                          ? 'bg-white/10 text-white border border-white/10'
+                          : 'text-white/50 hover:text-white/80 hover:bg-white/5'
+                        }
+                      `}
+                    >
+                      <Icon size={17} />
+                      <span>{item.label}</span>
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
         </nav>
 
         {/* Footer */}
         <div className="p-4 border-t border-white/5">
-          <p className="text-xs text-white/30 text-center">
-            6 Religions &middot; Real Scriptures &middot; World Map
+          <p className="text-xs text-white/25 text-center">
+            6 Religions · 4 Frameworks · 15 Scenarios
           </p>
         </div>
       </motion.aside>

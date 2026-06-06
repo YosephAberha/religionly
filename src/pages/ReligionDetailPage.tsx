@@ -1,17 +1,18 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowLeft, BookOpen, Heart, Compass, GitBranch, History, Users, ChevronDown, ChevronUp, ShieldAlert, Globe, Check, XCircle, AlertTriangle, Lightbulb } from 'lucide-react'
+import { ArrowLeft, BookOpen, Heart, Compass, GitBranch, History, Users, ChevronDown, ChevronUp, ShieldAlert, Globe, Check, XCircle, AlertTriangle, Lightbulb, Briefcase, Clock, Utensils, Shirt, CalendarDays, ClipboardList, Scale } from 'lucide-react'
 import { useState } from 'react'
 import GlassCard from '../components/GlassCard'
 import ScriptureCard from '../components/ScriptureCard'
 import { getReligionById, topicLabels, topicIcons } from '../data/religions'
-import { PageId, Religion } from '../types'
+import { getAccommodationByReligion } from '../data/workplaceAccommodation'
+import { PageId, Religion, WorkplaceAccommodation } from '../types'
 
 interface ReligionDetailPageProps {
   religionId: string
   onNavigate: (page: PageId, religionId?: string) => void
 }
 
-type Tab = 'beliefs' | 'texts' | 'practices' | 'denominations' | 'history' | 'sin' | 'etiquette'
+type Tab = 'beliefs' | 'texts' | 'practices' | 'denominations' | 'history' | 'sin' | 'etiquette' | 'workplace'
 
 const tabs: { id: Tab; label: string; icon: typeof BookOpen }[] = [
   { id: 'beliefs', label: 'Beliefs', icon: Heart },
@@ -21,10 +22,12 @@ const tabs: { id: Tab; label: string; icon: typeof BookOpen }[] = [
   { id: 'history', label: 'History', icon: History },
   { id: 'sin', label: 'Sin & Redemption', icon: ShieldAlert },
   { id: 'etiquette', label: 'Cultural Etiquette', icon: Globe },
+  { id: 'workplace', label: 'Workplace Guide', icon: Briefcase },
 ]
 
 export default function ReligionDetailPage({ religionId, onNavigate }: ReligionDetailPageProps) {
   const religion = getReligionById(religionId)
+  const accommodation = getAccommodationByReligion(religionId)
   const [activeTab, setActiveTab] = useState<Tab>('beliefs')
   const [expandedBelief, setExpandedBelief] = useState<string | null>('god')
 
@@ -119,6 +122,11 @@ export default function ReligionDetailPage({ religionId, onNavigate }: ReligionD
           {activeTab === 'history' && <HistoryTab religion={religion} />}
           {activeTab === 'sin' && <SinRedemptionTab religion={religion} />}
           {activeTab === 'etiquette' && <EtiquetteTab religion={religion} />}
+          {activeTab === 'workplace' && (
+            accommodation
+              ? <WorkplaceTab accommodation={accommodation} accent={religion.accent} />
+              : <div className="text-center py-20 text-white/40">Workplace guide coming soon for this religion.</div>
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
@@ -441,6 +449,214 @@ function SinRedemptionTab({ religion }: { religion: Religion }) {
           ))}
         </div>
       </div>
+    </div>
+  )
+}
+
+function WorkplaceTab({ accommodation, accent }: { accommodation: WorkplaceAccommodation; accent: string }) {
+  const [openSection, setOpenSection] = useState<string | null>('prayer')
+
+  const sections = [
+    { id: 'prayer', label: 'Prayer & Observance', icon: <Clock size={18} className="text-indigo-400" /> },
+    { id: 'diet', label: 'Dietary Requirements', icon: <Utensils size={18} className="text-emerald-400" /> },
+    { id: 'dress', label: 'Religious Dress', icon: <Shirt size={18} className="text-purple-400" /> },
+    { id: 'holidays', label: 'Holidays & Leave', icon: <CalendarDays size={18} className="text-amber-400" /> },
+    { id: 'checklist', label: "HR Manager's Checklist", icon: <ClipboardList size={18} className="text-pink-400" /> },
+    { id: 'legal', label: 'German Legal Context', icon: <Scale size={18} className="text-sky-400" /> },
+  ]
+
+  return (
+    <div className="space-y-4">
+      <GlassCard className="p-5">
+        <div className="flex items-center gap-3 mb-2">
+          <Briefcase size={20} className="text-white/60" />
+          <h3 className="font-bold text-white">Workplace Accommodation Guide</h3>
+        </div>
+        <p className="text-sm text-white/50 leading-relaxed">
+          A practical HR reference for managers working with employees of this faith. Covers day-to-day accommodation, leave planning, dietary requirements, and German legal obligations.
+        </p>
+      </GlassCard>
+
+      {sections.map((section) => {
+        const isOpen = openSection === section.id
+        return (
+          <GlassCard key={section.id} className="overflow-hidden">
+            <button
+              onClick={() => setOpenSection(isOpen ? null : section.id)}
+              className="w-full flex items-center justify-between p-5 text-left"
+            >
+              <div className="flex items-center gap-3">
+                {section.icon}
+                <span className="font-semibold text-white">{section.label}</span>
+              </div>
+              {isOpen ? <ChevronUp size={18} className="text-white/40 shrink-0" /> : <ChevronDown size={18} className="text-white/40 shrink-0" />}
+            </button>
+
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-5 pb-5 border-t border-white/5 pt-4 space-y-4">
+
+                    {section.id === 'prayer' && (
+                      <div className="space-y-3">
+                        {accommodation.prayerRequirements.hasMandatory && (
+                          <div className="flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-indigo-500/15 text-indigo-300 w-fit">
+                            Mandatory prayer times during work hours
+                          </div>
+                        )}
+                        <p className="text-sm text-white/70"><span className="text-white/40 text-xs uppercase tracking-wider">Frequency: </span>{accommodation.prayerRequirements.frequency}</p>
+                        <div>
+                          <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Prayer Times</p>
+                          <div className="flex flex-wrap gap-2">
+                            {accommodation.prayerRequirements.times.map((t, i) => (
+                              <span key={i} className="text-xs px-3 py-1.5 rounded-full bg-white/10 text-white/70">{t}</span>
+                            ))}
+                          </div>
+                        </div>
+                        <p className="text-sm text-white/70"><span className="text-white/40 text-xs uppercase tracking-wider">Duration: </span>{accommodation.prayerRequirements.duration}</p>
+                        <p className="text-sm text-white/70"><span className="text-white/40 text-xs uppercase tracking-wider">Space: </span>{accommodation.prayerRequirements.spaceRequirements}</p>
+                        {accommodation.prayerRequirements.washingRequired && (
+                          <p className="text-xs text-amber-300/80 bg-amber-500/10 px-3 py-2 rounded-lg">Ritual washing (ablution) required before prayer — access to sinks is needed.</p>
+                        )}
+                        <p className="text-sm text-white/60 leading-relaxed border-t border-white/5 pt-3">{accommodation.prayerRequirements.notes}</p>
+                      </div>
+                    )}
+
+                    {section.id === 'diet' && (
+                      <div className="space-y-4">
+                        <p className="text-sm text-white/70 leading-relaxed">{accommodation.dietaryRestrictions.summary}</p>
+                        {accommodation.dietaryRestrictions.prohibited.length > 0 && (
+                          <div>
+                            <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Prohibited</p>
+                            <div className="space-y-2">
+                              {accommodation.dietaryRestrictions.prohibited.map((item, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                  <XCircle size={14} className="text-red-400 mt-0.5 shrink-0" />
+                                  <span className="text-sm text-white/70">{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        {accommodation.dietaryRestrictions.required.length > 0 && (
+                          <div>
+                            <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Required</p>
+                            <div className="space-y-2">
+                              {accommodation.dietaryRestrictions.required.map((item, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                  <Check size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                                  <span className="text-sm text-white/70">{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        <div>
+                          <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Event Catering Tips</p>
+                          <div className="space-y-2">
+                            {accommodation.dietaryRestrictions.eventTips.map((tip, i) => (
+                              <div key={i} className="flex items-start gap-2">
+                                <Lightbulb size={14} className="text-amber-400 mt-0.5 shrink-0" />
+                                <span className="text-sm text-white/70">{tip}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {section.id === 'dress' && (
+                      <div className="space-y-4">
+                        <p className="text-sm text-white/70 leading-relaxed">{accommodation.dresscode.summary}</p>
+                        <div>
+                          <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Religious Articles</p>
+                          <div className="flex flex-wrap gap-2">
+                            {accommodation.dresscode.specificItems.map((item, i) => (
+                              <span key={i} className="text-xs px-3 py-1.5 rounded-lg bg-white/10 text-white/70">{item}</span>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Policy Guidance</p>
+                          <div className="space-y-2">
+                            {accommodation.dresscode.visitTips.map((tip, i) => (
+                              <div key={i} className="flex items-start gap-2">
+                                <AlertTriangle size={14} className="text-amber-400 mt-0.5 shrink-0" />
+                                <span className="text-sm text-white/70">{tip}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {section.id === 'holidays' && (
+                      <div className="space-y-4">
+                        {accommodation.holidays.map((holiday, i) => (
+                          <GlassCard key={i} delay={i * 0.08} className="p-4">
+                            <div className="flex items-start justify-between mb-2 gap-2">
+                              <h4 className="font-semibold text-white">{holiday.name}</h4>
+                              {holiday.fastingInvolved && (
+                                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 shrink-0">Fasting</span>
+                              )}
+                            </div>
+                            <p className="text-xs text-white/40 mb-2">{holiday.approxDates}</p>
+                            <p className="text-sm text-white/60 mb-3">{holiday.significance}</p>
+                            <div className="space-y-1.5 border-t border-white/5 pt-3">
+                              <p className="text-xs text-white/40"><span className="font-medium">Duration:</span> {holiday.duration}</p>
+                              <p className="text-xs text-white/40"><span className="font-medium">Work impact:</span> {holiday.workImpact}</p>
+                              <p className="text-xs text-emerald-300/80 bg-emerald-500/10 px-2 py-1.5 rounded-lg mt-2">💡 {holiday.accommodationTip}</p>
+                            </div>
+                          </GlassCard>
+                        ))}
+                      </div>
+                    )}
+
+                    {section.id === 'checklist' && (
+                      <div className="space-y-2">
+                        {accommodation.hrChecklist.map((item, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: i * 0.05 }}
+                            className="flex items-start gap-3 p-3 rounded-xl bg-white/5"
+                          >
+                            <div
+                              className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold mt-0.5"
+                              style={{ background: accent + '33', color: accent }}
+                            >
+                              {i + 1}
+                            </div>
+                            <p className="text-sm text-white/70 leading-relaxed">{item}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    )}
+
+                    {section.id === 'legal' && (
+                      <div className="p-4 rounded-xl bg-sky-500/10 border border-sky-500/20">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Scale size={16} className="text-sky-400" />
+                          <span className="text-sm font-semibold text-sky-300">German Legal Framework (AGG)</span>
+                        </div>
+                        <p className="text-sm text-white/70 leading-relaxed">{accommodation.germanLegalNote}</p>
+                      </div>
+                    )}
+
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </GlassCard>
+        )
+      })}
     </div>
   )
 }
