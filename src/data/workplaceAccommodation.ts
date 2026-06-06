@@ -63,7 +63,6 @@ export const workplaceAccommodations: WorkplaceAccommodation[] = [
     ],
     hrChecklist: [
       'Designate a clean, quiet prayer room or flexible quiet space',
-      'Install or allow use of ablution (wudu) facilities near restrooms',
       'Add Eid al-Fitr and Eid al-Adha to company leave calendar annually',
       'Ensure company events always include halal or vegetarian food options',
       'Adjust work schedules during Ramadan where possible (earlier start/finish)',
